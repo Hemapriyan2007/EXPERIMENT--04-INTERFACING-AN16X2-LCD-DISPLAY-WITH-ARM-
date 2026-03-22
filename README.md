@@ -1,4 +1,6 @@
 # EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM AND DISPLAY STRING
+## NAME : HEMAPRIYAN.P
+## REGISTER NUMBER : 212224040116
 
 
  ## Aim: To Interface a 16X2 LCD display to ARM controller  , and simulate it in Proteus 
@@ -173,15 +175,28 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
-
-
+```
+#include "main.h"
+#include "lcd.h"
+Lcd_PortType ports[] = { GPIOA, GPIOA, GPIOA, GPIOA };
+    Lcd_PinType pins[] = {GPIO_PIN_3, GPIO_PIN_2, GPIO_PIN_1, GPIO_PIN_0};
+    Lcd_HandleTypeDef lcd;
+    lcd = Lcd_create(ports, pins, GPIOB, GPIO_PIN_0, GPIOB, GPIO_PIN_1, LCD_4_BIT_MODE);
+    Lcd_cursor(&lcd, 0,1);
+    Lcd_string(&lcd, "HEMAPRIYAN");
+    Lcd_cursor(&lcd, 1,1);
+    Lcd_string(&lcd, "212224040116");
+```
 
 
 ## Output screen shots of proteus  :
- 
+<img width="1380" height="617" alt="Screenshot 2026-03-22 134148" src="https://github.com/user-attachments/assets/ee65a263-b345-4459-aa4d-c08cb5e0f0c0" />
+
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+ <img width="1203" height="834" alt="cd" src="https://github.com/user-attachments/assets/fad0542c-142e-454a-a2cc-6f5b0917e7f8" />
+
+
  
 ## Result :
 Interfacing a lcd display with ARM microcontroller are simulated in proteus and the results are verified.
